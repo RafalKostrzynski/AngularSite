@@ -28,8 +28,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
-            ],
+              "src/styles.scss",
+              "node_modules/todomvc-app-css/index.css"
+               ],
             "scripts": []
           },
           "configurations": {
