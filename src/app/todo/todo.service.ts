@@ -13,9 +13,9 @@ let TODOS = [
 })
 export class TodoService {
 
-  public constructor() { }
+  constructor() { }
 
-  public get(query = '') {
+  get(query = '') {
     return new Promise(resolve => {
       let data;
   
@@ -30,14 +30,14 @@ export class TodoService {
     });
   }
 
-  public add(data) {
+  add(data) {
     return new Promise(resolve => {
       TODOS.push(data);
       resolve(data);
     });
   }
 
-  public put(changed) {
+  put(changed) {
     return new Promise(resolve => {
       const index = TODOS.findIndex(todo => todo === changed);
       TODOS[index].title = changed.title;
@@ -45,7 +45,7 @@ export class TodoService {
     });
   }
 
-  public delete(selected) {
+  delete(selected) {
     return new Promise(resolve => {
       const index = TODOS.findIndex(todo => todo === selected);
       TODOS.splice(index, 1);
@@ -53,14 +53,14 @@ export class TodoService {
     });
   }
 
-  public deleteCompleted() {
+  deleteCompleted() {
     return new Promise(resolve => {
       TODOS = TODOS.filter(todo => !todo.isDone);
       resolve(TODOS);
     });
   }
 
-  public toggle(selected) {
+  toggle(selected) {
     selected.isDone = !selected.isDone;
     return Promise.resolve();
   }

@@ -14,7 +14,7 @@ export class TodoComponent implements OnInit {
   public newTodo;
   public path;
 
-  constructor(private todoService: TodoService, private route: ActivatedRoute) { }
+  constructor(public todoService: TodoService, public route: ActivatedRoute) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
